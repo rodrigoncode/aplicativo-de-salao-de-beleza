@@ -1,0 +1,49 @@
+import random
+
+simbolos = ["🐯","🍀","💎","⭐","🍒","🔔"]
+
+pontos = 100
+
+print("=== MINI TIGRINHO 6 SLOTS ===")
+
+while pontos > 0:
+
+    input("Pressione ENTER para girar")
+
+    resultado = []
+
+    for i in range(6):
+        resultado.append(random.choice(simbolos))
+
+    print(" | ".join(resultado))
+
+    contagem = {}
+
+    for s in resultado:
+        contagem[s] = contagem.get(s, 0) + 1
+
+    maior = max(contagem.values())
+
+    if maior >= 6:
+        print("MEGA JACKPOT +200")
+        pontos += 200
+
+    elif maior >= 5:
+        print("SUPER PRÊMIO +100")
+        pontos += 100
+
+    elif maior >= 4:
+        print("PRÊMIO +50")
+        pontos += 50
+
+    elif maior >= 3:
+        print("PEQUENO PRÊMIO +20")
+        pontos += 20
+
+    else:
+        print("Perdeu -10")
+        pontos -= 10
+
+    print("Pontos:", pontos)
+
+print("Game Over")
