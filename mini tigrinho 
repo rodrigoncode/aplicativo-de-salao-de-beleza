@@ -4,6 +4,18 @@ simbolos = ["🐯","🍀","💎","⭐","🍒","🔔"]
 
 pontos = 100
 
+def rodada_bonus():
+    print("\n🎁 RODADA BÔNUS ATIVADA!")
+    bonus = 0
+
+    for i in range(5):  # 5 rodadas grátis
+        r = random.randint(10,50)
+        print("Rodada bônus", i+1, "ganhou", r, "pontos")
+        bonus += r
+
+    print("Total ganho no bônus:", bonus)
+    return bonus
+
 print("=== MINI TIGRINHO 6 SLOTS ===")
 
 while pontos > 0:
